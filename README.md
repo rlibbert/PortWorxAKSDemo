@@ -1,10 +1,16 @@
 # PortWorxAKSDemo
 Sign into PW portal.
+
 Create Blob storage in Azure
+
 Grab the portwox helm repo
+
    helm repo add portworx http://charts.portworx.io/ && helm repo update 
+   
 Go back to the portal and enter the storage class name (in this case portworxbu)
+
 Use the generated helm cmd to install:
+
     helm install px-backup portworx/px-backup --namespace px-backup --create-namespace --version 1.2.2 --set persistentStorage.enabled=true,persistentStorage.storageClassName="portworxbu"
 
 
